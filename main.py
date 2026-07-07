@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import asyncio
 import random
-
+import os
 bot = commands.Bot(command_prefix='-', intents=discord.Intents.all())
 
 # ضعي رابط صورتك هنا
