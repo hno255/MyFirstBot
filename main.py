@@ -44,5 +44,5 @@ async def روليت(ctx):
     embed.set_image(url=IMAGE_LINK)
     await ctx.send(embed=embed, view=view)
 
-bot.run("MTUyMzA4ODY3NDE5MDAwNDIyNA.GrRfdO.NHxz-JpcoB-5HdNsLnVP2xBEDBjjUFfviWVqjU")
+bot.run(os.environ.get('TOKEN'))
 
