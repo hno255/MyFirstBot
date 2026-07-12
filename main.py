@@ -1,3 +1,4 @@
+from game import TicTacToeView, TicTacToe
 import discord
 from discord.ext import commands
 import asyncio
@@ -44,5 +45,11 @@ async def روليت(ctx):
     embed.set_image(url=IMAGE_LINK)
     await ctx.send(embed=embed, view=view)
 
-bot.run(os.environ.get('TOKEN'))
+@bot.command()
+async def tictactoe(ctx):
+    game = TicTacToe()
+    view = TicTacToeView(game, ctx.author, ctx.author)
+    await ctx.send("لعبة XO بدأت!:", view=view)
+    
 
+bot.run(os.environ.get('TOKEN'))
