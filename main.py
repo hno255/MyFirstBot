@@ -46,7 +46,7 @@ async def روليت(ctx):
     await ctx.send(embed=embed, view=view)
 
 @bot.command()
-async def tictactoe(ctx):
+async def xo(ctx):
     game = TicTacToe()
     view = TicTacToeView(game, ctx.author, ctx.author)
     await ctx.send("لعبة XO بدأت!:", view=view)
