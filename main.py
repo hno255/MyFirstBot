@@ -67,8 +67,26 @@ def keep_alive():
     t = Thread(target=run)
     t.start()
 
-# تشغيل خاصية الإبقاء على الاتصال
-keep_alive()
+# --- إضافة الرد بالصورة ---
+@bot.event
+async def on_message(message):
+    # لا يرد البوت على نفسه
+    if message.author == bot.user:
+        return
+
+    # ضعي هنا رقم القناة الذي نسختِه (مكان الأصفار)
+    TARGET_CHANNEL_ID =  1526317080943657040
+    
+    # رابط الصورة (ضعي رابط صورتك هنا بين علامات التنصيص)
+    IMAGE_LINK = "https://i.postimg.cc/kXL0BLyq/1783971316738.png"
+    
+    if message.channel.id == TARGET_CHANNEL_ID and message.attachments:
+        await message.channel.send(IMAGE_LINK)
+    
+    await bot.process_commands(message)
+
+# --- تشغيل البوت ---
+
 
 
 bot.run(os.environ.get('TOKEN'))
