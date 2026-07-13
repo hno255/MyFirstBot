@@ -51,5 +51,24 @@ async def xo(ctx):
     view = TicTacToeView(game, ctx.author, ctx.author)
     await ctx.send("لعبة XO بدأت!:", view=view)
     
+from flask import Flask
+from threading import Thread
+
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "البوت يعمل!"
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
+
+# تشغيل خاصية الإبقاء على الاتصال
+keep_alive()
+
 
 bot.run(os.environ.get('TOKEN'))
