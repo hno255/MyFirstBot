@@ -6,7 +6,7 @@ import os
 
 # إعداد البوت
 bot = commands.Bot(command_prefix='-', intents=discord.Intents.all())
-IMAGE_LINK = "https://i.postimg.cc/rs2NWCzW/6500f0dc5986495c6d6d04fc09b56b77-edit-227797447341226.jpg"
+IMAGE_LINK = "https://i.postimg.cc/WpXgnvDC/1783420139163.png"
 
 # --- كلاس الروليت ---
 class RouletteView(discord.ui.View):
